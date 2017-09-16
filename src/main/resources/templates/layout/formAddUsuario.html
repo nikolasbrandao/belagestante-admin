@@ -1,0 +1,29 @@
+<form th:fragment="form" th:object="${usuario}" method="post"
+	action="/salvaUsuario">
+	<h1>Cadastrar usuario</h1>
+	<input type="hidden" name="id" th:value="${usuario.id}" />
+	<div class="field">
+		<label class="label">Nome</label>
+		<div class="control">
+			<input class="input" th:value="${usuario.nome}" name="nome" type="text" placeholder="Digite seu nome" />
+		</div>
+	</div>
+	<div class="field">
+		<label class="label">senha</label>
+		<div class="control">
+			<input class="input" type="password" th:value="${usuario.senha}" name="senha"
+				placeholder="Senha com mais de 6 caracteres" />
+		</div>
+	</div>
+	<div class="field">
+		<label class="label">email</label>
+		<div class="control">
+			<input class="input" type="email"  th:value="${usuario.email}" name="email" placeholder="Entre com seu email" />
+		</div>
+	</div>
+	<div class="control">
+		<button class="button is-primary">Enviar</button>
+	</div>
+
+
+</form>

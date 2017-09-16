@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head th:include="layout/fragments :: cabecalho">
+</head>
+<body>
+	<section class="hero is-primary is-bold">
+		<div class="hero-body">
+			<div class="container">
+				<h1 class="title">Bela Gestante</h1>
+				<h2 class="subtitle">A plataforma que conecta mamães as melhores dicas</h2>
+			</div>
+		</div>
+	</section>
+	<div class="container">
+		<div class="columns">
+			<div class="column is-two-thirds">
+				<form th:action="@{/login}" method="post">
+					<label class="label">Usuario</label> <input name="username"
+						class="input" placeholder="Usuário" /> <label class="label">Senha</label>
+					<input type="password" class="input" name="password"
+						placeholder="Senha" />
+					<button class="button is-primary">Entrar</button>
+				</form>
+			</div>
+			<div class="column"></div>
+		</div>
+	</div>
+</body>
+</html>

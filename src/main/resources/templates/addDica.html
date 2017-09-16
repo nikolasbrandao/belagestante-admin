@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="layout/fragments :: cabecalho">
+</head>
+<body>
+
+	<nav th:replace="layout/fragments :: barra-navegacao"></nav>
+
+	<div class="container">
+		<div class="columns">
+			<div class="column is-two-thirds">
+				<form th:replace="layout/formAddDicas :: form">
+				</form>
+			</div>
+			<div class="column">
+				<aside th:replace="layout/fragments :: dicas-menu-latera"
+					class="menu"></aside>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

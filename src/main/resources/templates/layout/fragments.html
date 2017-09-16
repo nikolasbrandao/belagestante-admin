@@ -1,0 +1,64 @@
+<head th:fragment="cabecalho">
+<meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bela Gestante</title>
+<link rel="shortcut icon" th:href="@{img/favicon.ico}" />
+<link rel="stylesheet" href="../resources/css/bulma.css"
+	th:href="@{css/bulma.css}" type="text/css" />
+</head>
+
+
+<nav th:fragment="barra-navegacao" class="navbar">
+	<script type="text/javascript" th:src="@{bulma/menu.js}"></script>
+	<style>
+.navbar {
+	background-color: hsl(171, 100%, 41%)
+}
+
+.navbar-item {
+	color: #fff;
+}
+</style>
+	<div class="navbar-brand">
+		<a class="navbar-item" href="/">
+			<h1>Bela Gestante</h1>
+		</a>
+		<div class="navbar-burger" data-target="navMenu">
+			<span></span> <span></span> <span></span>
+		</div>
+	</div>
+	<div class="navbar-menu" id="navMenu">
+		<div class="navbar-start">
+			<a class="navbar-item" href="/dicas"> Dicas </a> <a
+				class="navbar-item" href="/usuarios"> Usuarios </a> <a
+				class="navbar-item" href="/sobre"> Conheça o projeto </a>
+		</div>
+		<div class="navbar-end">
+			<form method="post" th:action="@{/logout}">
+				<a class="navbar-item" href="/logout">Sair</a>
+			</form>
+		</div>
+
+	</div>
+</nav>
+
+<aside th:fragment="dicas-menu-latera" class="menu">
+	<h3>
+		<p class="menu-label">Ajude o projeto</p>
+		<ul class="menu-list">
+			<li><a>Sugerir dica</a></li>
+			<li><a>Sugerir médico</a></li>
+			<li><a>Sugerir correção</a></li>
+		</ul>
+		<div sec:authorize="hasRole('ROLE_ADMIN')">
+			<div sec:authentication="name"></div>
+			<p class="menu-label">Administrador</p>
+			<ul class="menu-list">
+				<li><a href="/addDica">Adicionar dica</a></li>
+				<li><a href="/dicasSugeridas">Dicas sugeridas</a></li>
+				<li><a href="/relatorioDicas">Imprimir dicas</a></li>
+			</ul>
+		</div>
+	</h3>
+</aside>

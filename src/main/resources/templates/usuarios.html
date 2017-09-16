@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="layout/fragments :: cabecalho">
+</head>
+<body>
+
+	<nav th:replace="layout/fragments :: barra-navegacao"></nav>
+
+	<section class="hero is-info is-bold">
+		<div class="hero-body">
+			<div class="container">
+				<h1 class="title">Usuarios</h1>
+				<h2 class="subtitle">Cantinho especial para gerenciar os
+					perfis.</h2>
+			</div>
+		</div>
+	</section>
+
+	<div class="container">
+		<div class="columns">
+			<div class="column is-two-thirds">
+				<h1>Usuarios ativos na plataforma</h1>
+				<div th:each="usuario : ${usuarios}">
+					<div class="card">
+						<header class="card-header">
+							<p class="card-header-title" th:text="${usuario.nome}"></p>
+						</header>
+						<div class="card-content">
+							<div class="content">
+								<p th:text="${usuario.email}"></p>
+								<p>Demais informações do historico de saude</p>
+							</div>
+						</div>
+						<footer class="card-footer">
+							<a th:href="@{/usuarioEditar?id={id}(id=${usuario.id})}"
+								class="card-footer-item">Editar</a> <a
+								th:href="@{/usuarioDeletar?id={id}(id=${usuario.id})}"
+								class="card-footer-item">Deletar</a>
+						</footer>
+					</div>
+				</div>
+			</div>
+			<div class="column">
+				<h3>
+					<aside class="menu">
+						<p class="menu-label">Administrador</p>
+						<ul class="menu-list">
+							<li><a href="/addUsuario">Adicionar usuario</a></li>
+							<li><a>Alterar usuario</a></li>
+						</ul>
+					</aside>
+				</h3>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

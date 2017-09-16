@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="layout/fragments :: cabecalho">
+</head>
+<body>
+
+	<nav th:replace="layout/fragments :: barra-navegacao"></nav>
+
+	<section class="hero is-info is-bold">
+		<div class="hero-body">
+			<div class="container">
+				<h1 class="title">Dicas</h1>
+				<h2 class="subtitle">Uma dica por dia ja pode tornar o mundo
+					mais facil.</h2>
+			</div>
+		</div>
+	</section>
+
+	<div class="container">
+		<div class="columns">
+			<div class="column is-two-thirds">
+				<div th:each="dica : ${dicas}">
+					<div class="box">
+						<article class="media">
+							<div class="media-left">
+								<figure class="image is-64x64">
+									<img
+										src="https://image.freepik.com/vetores-gratis/mulher-gravida-no-estilo-desenhado-mao_23-2147505580.jpg"
+										alt="pregnant"></img>
+								</figure>
+							</div>
+							<div class="media-content">
+								<div class="content">
+									<h3 th:text="${dica.titulo}"></h3>
+									<p th:text="${dica.lead}"></p>
+									<p th:text="${dica.imagem}"></p>
+									<p th:text="${dica.conteudo}"></p>
+									<div class="field has-addons">
+										<p class="control">
+											<a class="card-footer-item is-info is-outlined"
+												th:href="@{/dicasEditar?id={id}(id=${dica.id})}">Editar</a>
+										</p>
+										<p class="control">
+											<a class="card-footer-item is-danger is-outlined"
+												th:href="@{/dicas/remover(id=${dica.id})}">Deletar</a>
+										</p>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+			<div class="column">
+												<aside th:replace="layout/fragments :: dicas-menu-latera"
+													class="menu"></aside>
+									</div>
+								</div>
+							</div>
+</body>
+</html>

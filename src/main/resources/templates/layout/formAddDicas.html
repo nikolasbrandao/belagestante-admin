@@ -1,0 +1,43 @@
+<form th:fragment="form" th:object="${dica}" method="post"
+	action="/salvaDica">
+	<input type="hidden" name="id" th:value="${dica.id}" />
+	<div class="field">
+		<label class="label">Titulo</label>
+		<div class="control">
+			<input class="input" th:value="${dica.titulo}" name="titulo"
+				type="text" placeholder="Adicione seu titulo" />
+		</div>
+	</div>
+	<div class="field">
+		<label class="label">Lead</label>
+		<div class="control">
+			<input class="input is-success" name="lead" type="text"
+				th:value="${dica.lead}"
+				placeholder="O Lead é o subtitulo do seu texto" />
+		</div>
+	</div>
+	<div class="field">
+		<label class="label">Imagem</label>
+		<div class="control has-icons-left has-icons-right">
+			<div class="file">
+				<label class="file-label"> <input class="file-input"
+					th:value="${dica.imagem}" type="file" name="imagem"> <span
+					class="file-cta"> <span class="file-icon"> <i
+							class="fa fa-upload"></i>
+					</span> <span class="file-label"> Escolha o arquivo </span>
+				</span></input>
+				</label>
+			</div>
+		</div>
+	</div>
+	<div class="field">
+		<label class="label">Conteudo</label>
+		<div class="control">
+			<textarea class="textarea" th:value="${dica.conteudo}" name="conteudo"
+				placeholder="Digite seu texto aqui"></textarea>
+		</div>
+	</div>
+	<div class="control">
+		<button type="submit" class="button is-primary">Enviar</button>
+	</div>
+</form>

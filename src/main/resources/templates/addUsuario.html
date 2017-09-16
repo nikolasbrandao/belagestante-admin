@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="layout/fragments :: cabecalho">
+</head>
+<body>
+
+	<nav th:replace="layout/fragments :: barra-navegacao"></nav>
+
+	<div class="container">
+		<div class="columns">
+			<div class="column is-two-thirds">
+				<form th:replace="layout/formAddUsuario :: form"></form>
+			</div>
+			<div class="column">
+				<h3>
+					<aside class="menu">
+						<p class="menu-label">Administrador</p>
+						<ul class="menu-list">
+							<li><a>Adicionar usuario</a></li>
+							<li><a>Alterar usuario</a></li>
+						</ul>
+					</aside>
+				</h3>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
