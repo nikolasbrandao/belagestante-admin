@@ -1,5 +1,5 @@
 <form th:fragment="form" th:object="${dica}" method="post"
-	action="/salvaDica">
+	action="/salvaDica" enctype="multipart/form-data">
 	<input type="hidden" name="id" th:value="${dica.id}" />
 	<div class="field">
 		<label class="label">Titulo</label>
@@ -20,12 +20,14 @@
 		<label class="label">Imagem</label>
 		<div class="control has-icons-left has-icons-right">
 			<div class="file">
-				<label class="file-label"> <input class="file-input"
-					th:value="${dica.imagem}" type="file" name="imagem"> <span
-					class="file-cta"> <span class="file-icon"> <i
-							class="fa fa-upload"></i>
+				<label class="file-label"> 
+				<input class="file-input"
+					th:value="${dica.imagem}" type="file" name="imagemDoProduto"> 
+					<span class="file-cta"> <span class="file-icon"> 
+							<i class="fa fa-upload"></i>
 					</span> <span class="file-label"> Escolha o arquivo </span>
-				</span></input>
+					</span>
+				</input>
 				</label>
 			</div>
 		</div>

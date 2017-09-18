@@ -3,12 +3,16 @@ package br.edu.ifma.corpsystem.gestanteadmin.pages;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +21,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.edu.ifma.corpsystem.gestanteadmin.model.Dica;
@@ -38,6 +43,8 @@ public class DicasPage {
 	@Autowired
 	private ApplicationContext appContext;
 
+	
+	
 	@GetMapping("/dicas")
 	public ModelAndView getDicas() {
 		Iterable<Dica> dicas = dicaDao.findAll();
@@ -53,7 +60,18 @@ public class DicasPage {
 	}
 
 	@PostMapping("/salvaDica")
-	public ModelAndView salvaDica(Dica dica) {
+	public ModelAndView salvaDica(Dica dica, MultipartFile imagemDoProduto, HttpServletRequest request) {
+		String uploadimg = request.getServletContext().getRealPath("/img-dicas");
+		if(!imagemDoProduto.isEmpty()) {
+			try {
+				byte[] bytes = imagemDoProduto.getBytes();
+				Path path = Paths.get(uploadimg +imagemDoProduto.getOriginalFilename());
+				Files.write(path, bytes);
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 		ModelAndView modelAndView = new ModelAndView("redirect:/dicas");
 		dicaDao.save(dica);
 		return modelAndView;
