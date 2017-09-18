@@ -79,7 +79,7 @@ public class DicasPage {
 
 	@GetMapping("/dicasEditar")
 	public ModelAndView editaDica(@RequestParam("id") Long id) {
-		ModelAndView modelAndView = new ModelAndView("/addDica");
+		ModelAndView modelAndView = new ModelAndView("addDica");
 		Dica dica = dicaDao.findById(id);
 		modelAndView.addObject("dica", dica);
 		return modelAndView;
