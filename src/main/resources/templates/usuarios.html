@@ -20,7 +20,6 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 	<div class="container">
 		<div class="columns">
 			<div class="column is-two-thirds">
-				<h1>Usuarios ativos na plataforma</h1>
 				<div th:each="usuario : ${usuarios}">
 					<div class="card">
 						<header class="card-header">
@@ -47,7 +46,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 						<p class="menu-label">Administrador</p>
 						<ul class="menu-list">
 							<li><a href="/addUsuario">Adicionar usuario</a></li>
-							<li><a>Alterar usuario</a></li>
+							<li><a href="/relatorioUsuarios">Imprimir usuarios</a></li>
 						</ul>
 					</aside>
 				</h3>

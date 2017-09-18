@@ -1,5 +1,10 @@
 package br.edu.ifma.corpsystem.gestanteadmin.pages;
 
+import java.io.IOException;
+import java.sql.SQLException;
+
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -52,6 +57,16 @@ public class UsuariosPage {
 		Usuario usuario = usuarioDao.findById(id);
 		usuarioDao.delete(usuario);
 		return modelAndView;
+	}
+	
+	@GetMapping("/relatorioUsuarios")
+	public ModelAndView imprimeRelatorioDicas(HttpServletResponse response) throws SQLException, IOException {
+		Iterable<Usuario> usuarios = usuarioDao.findAll();
+		ModelAndView modelAndView = new ModelAndView("relatorioUsuarios");
+		modelAndView.addObject("usuarios", usuarios);
+		
+		return modelAndView;
+	
 	}
 
 }
