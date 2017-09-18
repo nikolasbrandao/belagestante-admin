@@ -94,7 +94,12 @@ public class DicasPage {
 	}
 
 	@GetMapping("/relatorioDicas")
-	public void imprimeRelatorioDicas(HttpServletResponse response) throws SQLException, IOException {
+	public ModelAndView imprimeRelatorioDicas(HttpServletResponse response) throws SQLException, IOException {
+		Iterable<Dica> dicas = dicaDao.findAll();
+		ModelAndView modelAndView = new ModelAndView("relatorioDicas");
+		modelAndView.addObject("dicas", dicas);
+		return modelAndView;
+		
 		// InputStream jasperStream =
 		// this.getClass().getResourceAsStream("/reports/Invoice.jasper");
 		// JasperReport jasperReport = (JasperReport) JRLoader.loadObject(jasperStream);
