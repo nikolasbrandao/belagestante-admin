@@ -41,7 +41,7 @@ public class UsuariosPage {
 
 	@GetMapping("/usuarioEditar")
 	public ModelAndView editaUsuario(@RequestParam("id") Long id) {
-		ModelAndView modelAndView = new ModelAndView("/addUsuario");
+		ModelAndView modelAndView = new ModelAndView("addUsuario");
 		Usuario usuario = usuarioDao.findById(id);
 		modelAndView.addObject("usuario", usuario);
 		return modelAndView;
