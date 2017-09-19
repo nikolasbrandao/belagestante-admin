@@ -18,7 +18,7 @@
 			</div>
 		</div>
 	</section>
-
+	<br />
 	<div class="container">
 		<div class="columns">
 			<div class="column is-two-thirds">
@@ -39,10 +39,19 @@
 										<p th:text="${dica.lead}"></p>
 										<p th:text="${dica.imagem}"></p>
 										<p th:text="${dica.conteudo}"></p>
+										<div th:if="${dica.aprovada}">
+											<span class="tag is-success"><strong>Dica
+													aprovada</strong></span>
+										</div>
+										<div th:unless="${dica.aprovada}">
+											<span class="tag is-danger"><strong>Dica não
+													aprovada</strong></span>
+										</div>
 									</div>
 								</div>
 							</article>
 						</div>
+						<p></p>
 					</div>
 				</div>
 			</div>
@@ -55,7 +64,7 @@
 	</div>
 	<script type="text/javascript" th:src="@{js/jquery.min.js}"></script>
 	<script type="text/javascript" th:src="@{js/print.min.js}"></script>
-	
-	
+
+
 </body>
 </html>

@@ -5,12 +5,20 @@
 <body>
 
 	<nav th:replace="layout/fragments :: barra-navegacao"></nav>
-
+	<section class="hero is-info is-bold">
+		<div class="hero-body">
+			<div class="container">
+				<h1 class="title">Dicas</h1>
+				<h2 class="subtitle">Uma dica por dia ja pode tornar o mundo
+					mais facil.</h2>
+			</div>
+		</div>
+	</section>
+	<br />
 	<div class="container">
 		<div class="columns">
 			<div class="column is-two-thirds">
-				<form th:replace="layout/formAddDicas :: form">
-				</form>
+				<form th:replace="layout/formAddDicas :: form"></form>
 			</div>
 			<div class="column">
 				<aside th:replace="layout/fragments :: dicas-menu-latera"

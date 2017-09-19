@@ -1,6 +1,5 @@
 <form th:fragment="form" th:object="${usuario}" method="post"
 	action="/salvaUsuario">
-	<h1>Cadastrar usuario</h1>
 	<input type="hidden" name="id" th:value="${usuario.id}" />
 	<div class="field">
 		<label class="label">Nome</label>

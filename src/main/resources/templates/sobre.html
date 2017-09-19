@@ -5,21 +5,167 @@
 <body>
 
 	<nav th:replace="layout/fragments :: barra-navegacao"></nav>
-
+	<br />
 	<div class="container">
 		<div class="columns">
 			<div class="column is-two-thirds">
-				<h1>Listar Usuarios</h1>
+				<div class="content">
+					<h1 id="projeto">O Bela Gestante</h1>
+					<p>A gravidez é considerada um período de expectativas e
+						ensaios para o que está por vir e, além disso, é tida como uma
+						fase na qual relacionamentos anteriores são re-elaborados, onde há
+						um constante confronto entre a satisfação dos desejos e a
+						possibilidade de reconhecer a nova realidade.</p>
+					<p>A gestação é um período que exige uma série de adaptações e
+						uma necessidade de acompanhamento constante devido a mudanças
+						biológicas, somáticas, psicológicas e sociais que influenciam no
+						cotidiano da mulher. Uma atenção pré-natal e puerperal de
+						qualidade e humanizada é fundamental para a saúde materna e
+						neonatal.</p>
+					<p>A atenção à mulher na gravidez e no pós-parto deve incluir
+						ações de prevenção e promoção da saúde, além de diagnóstico e
+						tratamento adequado dos problemas que ocorrem neste período. Para
+						que a mulher apresente uma evolução na gravidez saudável são
+						necessários alguns cuidados que permeiam a avaliação
+						pré-concepcional, avaliações de risco reprodutivo, acompanhamento
+						através de consultas e cuidados com os aspectos emocionais da
+						gestante.</p>
+					<p>Com foco em auxiliar a saúde das mulheres grávidas, este
+						trabalho propõe a construção de um aplicativo móvel baseada no
+						sistema operacional Android, sua intenção é apresentar uma
+						interface amigável, através da qual a gestante possa contar com
+						informações sobre a estimativa de crescimento do bebê, marcação de
+						consultas, dicas sobre alimentação e atividades físicas, alertando
+						sobre doenças que podem causar complicações para o desenvolvimento
+						da gestação.</p>
+					<p>Ademais, pretende-se que o aplicativo funcione ainda como
+						uma ferramenta de apoio para a obtenção de informações sobre
+						modificações corporais, medos e fantasias, preparações para o
+						parto, aleitamento materno, planejamento familiar, higiene e
+						importância da participação do pai durante a gestação e do
+						desenvolvimento do vínculo pai-filho para o desenvolvimento
+						saudável da criança, de forma geral, o aplicativo busca melhorar a
+						qualidade de vida durante o pré-natal de ambos, gestante e
+						embrião.</p>
+
+					<h2 id="tecnologias">Sobre as tecnologias</h2>
+					<h3>Spring</h3>
+					<figure>
+						<img th:src="@{img/spring-boot.png}" />
+						<figcaption>Spring logo</figcaption>
+					</figure>
+					<p>Visando descentralizar o gerenciamento da nossa ferramenta,
+						optou-se por utilizar uma ferramenta que pudesse trazer uma
+						interface que funcionasse de forma simples e integrada ao nosso
+						banco de dados. Optou-se para solucionar esse problema as
+						seguintes tecnologias, Spring, Thymeleaf e Bulma.</p>
+					<p>O Framework Spring fornece um modelode programação e
+						configuração para aplicações baseadas em Java. O Spring é capaz de
+						fazer muitas coisas. Mas por debaixo de toda a sua funcionalidade
+						suas principais características são a injeção de dependência e uma
+						programação orientada a aspecto.</p>
+					<p>Esses elementos chaves do Spring trazem um suporte voltado a
+						aplicação buscando na estrutura do projeto canalizar as
+						configurações mais gerais de uma aplicação para que as equipes de
+						desenvolvimento possam focar nas regras do negócio sem se
+						preocupar com ambiente de implantação.</p>
+					<p>O Thymeleaf é utilizado pelo Spring para renderizar páginas
+						Web gerenciadas pelos controladores escritos na linguagem. O
+						Thymeleaf é uma alternativa convincente ao JSP que oferece um
+						renderizador de visualização com a proposta de ser escrito de uma
+						forma mais natural apresentando uma semelhança maior com o HTML.</p>
+					<p>Por fim na nossa stack precisaríamos de um framework front
+						end para entregar componentes visuais agradáveis aos usuários.
+						Optou-se por utilizar o Bulma. O Bulma é um framework que utiliza
+						apenas CSS baseado em Flexbox.</p>
+					<p>A simplicidade e leveza do Bulma permitiu que o criador do
+						projeto desse ênfase no suporte na compatibilidade com diversos
+						navegadores, sendo assim uma ótima escolha para o projeto.</p>
+
+					<h3>Ionic</h3>
+					<figure>
+						<img th:src="@{img/Ionic_Logo.svg}" />
+						<figcaption>Ionic logo</figcaption>
+					</figure>
+					<p>O Ionic é um framework projetado em cima do conceito de
+						Single Page Applications permite fazer uso de HTML, CSS e
+						JavaScript combinados com o AngularJS e o Cordova com o objetivo
+						de criar aplicações híbridas.</p>
+					<p>O Ionic 2 trouxe melhorias adotando TypeScript como
+						linguagem e o Angular 2 em conjunto com o Cordova para a geração
+						das aplicações.</p>
+					<p>Algumas das principais melhorias do framework são:</p>
+					<ul>
+						<li>Navegação reestruturada: <br />Podemos navegar através
+							de páginas e elementos de páginas como menus laterais, modais,
+							containers, etc. Sem estar vinculado a uma URL.
+						</li>
+						<li>Suporte nativo melhorado: <br />Existem mais
+							funcionalidades nativas no Ionic o que retira do desenvolvedor a
+							necessidade em ficar buscando plugins e códigos para tarefas mais
+							simples.
+						</li>
+
+						<li>Sistema de temas: <br />A mudança de temas para alterar
+							o visual do aplicativo ficou mais simples, incluindo suporte
+							total ao Material Design do Android.
+						</li>
+					</ul>
+
+					<h3 id="gravidez">Sobre a gravidez</h3>
+					<p>Ser mãe não é apenas trocar fraldas, aquecer mamadeiras ou
+						lutar com as papinhas. Isso é apenas o começo; é nesse momento que
+						uma mãe se dá conta de que é capaz de fazer qualquer coisa pelo
+						seu filho.</p>
+					<p>Ser mãe significa mudar a sua vida, seu tempo, seu
+						pensamento, dar todo o seu coração, seu amor para levar seus
+						filhos adiante e ensiná-los a viver.</p>
+					<p>Significa ter uma razão de ser para o resto da vida; querer
+						aproveitar e viver ao máximo cada momento. Ter sentimentos
+						contraditórios ao ver os filhos crescendo, sentindo alegria e
+						saudade à medida que avançam ao longo da vida.</p>
+					<p>Se existe um amor real e sincero é o amor de mãe. É eterno e
+						infinito. Na realidade, ser mãe significa seguir os passos desses
+						pequenos professores, seus filhos, até que se tornem adultos.
+						Mesmo sem saber, eles nos ensinam a amar incondicionalmente.</p>
+					<p>Ser mãe significa nunca mais estar só no pensamento. Uma mãe
+						sempre pensa por dois: por ela e pelos seus filhos. Uma mãe se
+						sente afortunada, porque sabe que eles são o seu maior tesouro.</p>
+					<p>A maternidade não traz só alegrias, mas também muito choro e
+						aflição. Muitas noites sem dormir, preocupações sem fim, correr
+						atrás dos filhos, inventar mil maneiras de camuflar verduras e
+						peixes, suportar e tolerar brigas com toda a paciência do mundo.</p>
+					<p>A gestação é apenas o primeiro passo na linda historia de
+						ser mãe e a bela gestante quer ajudar você a dar esse passo.</p>
+
+
+					<h3 id="pesquisadores">Sobre os pesquisadores</h3>
+					<h2>Prof. João Carlos Pinheiro</h2>
+					<p>Possui graduação em Ciência da Computação pela Universidade
+						Federal do Maranhão (1998), mestrado em Ciências da Computação
+						pela Universidade de São Paulo (2001) e doutorado em Ciência da
+						Computação pela Universidade Federal do Ceará. É professor do
+						Instituto Federal de Educação, Ciência e Tecnologia do Maranhão.
+						Tem experiência na área de Ciência da Computação, com ênfase em
+						Sistemas Distribuídos, atuando atualmente nos seguintes temas:
+						Integração de Dados e Linked Data.</p>
+					<h3>Nikolas Martins Brandão Oliveira</h3>
+					<p>Estudante de Ciências Sociais durante o período de 2011 a
+						2013, possui experiência na área de Ciência Politica. Atualmente é
+						estudante de Sistema de Informação do Instituto Federal de
+						Educação Ciência e Tecnologia. Tem experiência na área de
+						Front-End.</p>
+				</div>
 			</div>
 			<div class="column">
 				<h3>
 					<aside class="menu">
-						<p class="menu-label">Sobre ________</p>
+						<p class="menu-label">Sobre o projeto</p>
 						<ul class="menu-list">
-							<li><a>Sobre o projeto</a></li>
-							<li><a>Sobre as tecnologias</a></li>
-							<li><a>Sobre a gravidez</a></li>
-							<li><a>Sobre os pesquisadores</a></li>
+							<li><a href="#projeto">Sobre o projeto</a></li>
+							<li><a href="#tecnologias">Sobre as tecnologias</a></li>
+							<li><a href="#gravidez">Sobre a gravidez</a></li>
+							<li><a href="#pesquisadores">Sobre os pesquisadores</a></li>
 						</ul>
 					</aside>
 				</h3>

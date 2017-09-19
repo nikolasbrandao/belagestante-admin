@@ -8,5 +8,6 @@ import br.edu.ifma.corpsystem.gestanteadmin.model.Dica;
 
 public interface DicaDao extends CrudRepository<Dica, Long>{
 	List<Dica> findByTitulo(String titulo);
+	List<Dica> findByAprovada(Boolean aprovada);
 	Dica findById(Long id);
 }

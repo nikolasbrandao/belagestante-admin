@@ -20,6 +20,8 @@ public class Dica {
 	
 	private String imagem;
 	
+	private Boolean aprovada;
+	
 	@Column(columnDefinition="text")
 	private String conteudo;
 	
@@ -77,6 +79,14 @@ public class Dica {
 
 	public void setMedico(Medico medico) {
 		this.medico = medico;
+	}
+
+	public Boolean getAprovada() {
+		return aprovada;
+	}
+
+	public void setAprovada(Boolean aprovada) {
+		this.aprovada = aprovada;
 	}
 	
 	

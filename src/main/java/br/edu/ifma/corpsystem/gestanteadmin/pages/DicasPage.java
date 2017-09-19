@@ -47,8 +47,18 @@ public class DicasPage {
 	
 	@GetMapping("/dicas")
 	public ModelAndView getDicas() {
-		Iterable<Dica> dicas = dicaDao.findAll();
+		//Iterable<Dica> dicas = dicaDao.findAll();
+		Iterable<Dica> dicas = dicaDao.findByAprovada(true);
 		ModelAndView modelAndView = new ModelAndView("dicas");
+		modelAndView.addObject("dicas", dicas);
+		return modelAndView;
+	}
+	
+	@GetMapping("/dicasSugeridas")
+	public ModelAndView getDicasSugeridas() {
+		//Iterable<Dica> dicas = dicaDao.findAll();
+		Iterable<Dica> dicas = dicaDao.findByAprovada(false);
+		ModelAndView modelAndView = new ModelAndView("dicasSugeridas");
 		modelAndView.addObject("dicas", dicas);
 		return modelAndView;
 	}
@@ -56,8 +66,11 @@ public class DicasPage {
 	@GetMapping("/addDica")
 	public ModelAndView getAddDicas(Dica dica) {
 		ModelAndView modelAndView = new ModelAndView("addDica");
+		dica.setAprovada(true);
+		modelAndView.addObject("dica", dica);
 		return modelAndView;
 	}
+
 
 	@PostMapping("/salvaDica")
 	public ModelAndView salvaDica(Dica dica, MultipartFile imagemDoProduto, HttpServletRequest request) {
@@ -77,11 +90,28 @@ public class DicasPage {
 		return modelAndView;
 	}
 
+	@GetMapping("/sugerirDica")
+	public ModelAndView sugerirDica(Dica dica) {
+		ModelAndView modelAndView = new ModelAndView("addDica");
+		dica.setAprovada(false);
+		modelAndView.addObject("dica", dica);
+		return modelAndView;
+	}
+	
 	@GetMapping("/dicasEditar")
 	public ModelAndView editaDica(@RequestParam("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("addDica");
 		Dica dica = dicaDao.findById(id);
 		modelAndView.addObject("dica", dica);
+		return modelAndView;
+	}
+	
+	@GetMapping("/dicasAprovar")
+	public ModelAndView aprovaDica(@RequestParam("id") Long id) {
+		ModelAndView modelAndView = new ModelAndView("redirect:/dicas");
+		Dica dica = dicaDao.findById(id);
+		dica.setAprovada(true);
+		dicaDao.save(dica);
 		return modelAndView;
 	}
 

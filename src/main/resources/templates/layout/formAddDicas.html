@@ -1,6 +1,7 @@
 <form th:fragment="form" th:object="${dica}" method="post"
 	action="/salvaDica" enctype="multipart/form-data">
 	<input type="hidden" name="id" th:value="${dica.id}" />
+	<input type="hidden" name="aprovada" th:value="${dica.aprovada}" />
 	<div class="field">
 		<label class="label">Titulo</label>
 		<div class="control">
@@ -35,7 +36,7 @@
 	<div class="field">
 		<label class="label">Conteudo</label>
 		<div class="control">
-			<textarea class="textarea" th:value="${dica.conteudo}" name="conteudo"
+			<textarea class="textarea" th:text="${dica.conteudo}" name="conteudo" type="text"
 				placeholder="Digite seu texto aqui"></textarea>
 		</div>
 	</div>
