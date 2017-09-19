@@ -16,13 +16,15 @@ public class SecurityWebConfig extends WebSecurityConfigurerAdapter {
 		  http.csrf().disable()
 		    .authorizeRequests()
 		        .antMatchers("/resources/**", "/webjars/**", "/css/**").permitAll()
-		        .antMatchers("/dicasEditar", "/dicas/remover", "addDica", "dicasSugeridas").hasRole("ADMIN")
+		        .antMatchers("/dicasEditar", "/dicas/remover", 
+		        		"/addDica", "/remover", "/usuarioEditar", 
+		        		"/usuarioDeletar", "/addUsuario", "/relatorioUsuarios").hasRole("ADMIN")
 		        .anyRequest().authenticated()
 		    .and()
 		    .formLogin()
 		        .loginPage("/login").permitAll(); 
 	}
-
+	
 	@Override
 	public void configure(AuthenticationManagerBuilder builder) throws Exception {
 		builder.inMemoryAuthentication()
