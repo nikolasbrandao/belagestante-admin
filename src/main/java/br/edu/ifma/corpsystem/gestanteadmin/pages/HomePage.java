@@ -11,4 +11,9 @@ public class HomePage {
 		return "index";
 	}
 	
+	@RequestMapping("naoTemPermissao")
+	public String getNaoTemPermissao() {
+		return "naoTemPermissao";
+	}
+	
 }

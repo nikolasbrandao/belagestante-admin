@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="layout/fragments :: cabecalho">
+</head>
+<body>
+
+	<nav th:replace="layout/fragments :: barra-navegacao"></nav>
+	<section class="hero is-info is-bold">
+		<div class="hero-body">
+			<div class="container">
+				<h1 class="title">Você não tem permissão para acessar essa
+					pagina</h1>
+				<h2 class="subtitle">Por favor continue navegando no nosso
+					site, em caso de duvidas entre em contato com o administrador do
+					sistema</h2>
+			</div>
+		</div>
+	</section>
+	<br />
+	<div class="container">
+		<div class="columns">
+			<div class="column is-two-thirds">
+				<figure class="image">
+					<img th:src="@{img/baby403.jpg}" />
+				</figure>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
